@@ -1,6 +1,6 @@
-with open('text.txt', 'r', encoding = 'utf - 8') as a:
-    lines = a.readlines()
-    new_lines = lines.replace("а", "о")
-with open('output.txt', 'w', encoding="utf - 8") as b:
-    b.writelines(new_lines)
-print("файл создан")
+with open('text.txt', 'r', encoding = 'utf - 8') as a: # открываем файл, который автоматически закроется, мы будем только читать  его и декодируем, в конце даем файлу простое название - a
+    lines = a.read() # записываем в переменную все содержимое файла
+    new_lines = lines.replace("а", "о") # меняем в содержимом переменной lines буквы а на о и записываем измененное соддержимое в переменную new_lines
+with open('output.txt', 'w', encoding="utf - 8") as b: # открываем новый автозакрывающийся файл в который буем записывать, декодируем его и даем удобное название - b
+    b.writelines(new_lines) # записываем в файл содержимое переменной new_lines
+print("файл создан") # оповещаем пользователя о том что файл был создан
